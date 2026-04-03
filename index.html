@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Oratoria Studio</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
 </head>
 
@@ -23,69 +23,76 @@
 
   <div class="menu" id="menu">
     <a href="#hero">Inicio</a>
-    <a href="#sobre">Quién soy</a>
+    <a href="#sobre">Sobre mí</a>
     <a href="#oratoria">Oratoria</a>
-    <a href="#galeria">Experiencia</a>
     <a href="#contacto">Contacto</a>
   </div>
 </nav>
 
-<div class="overlay" id="overlay"></div>
-
 <!-- HERO -->
 <section id="hero" class="hero">
-  <div class="hero-text">
-    <h1>Encontrá tu voz. <br> Hablá con confianza.</h1>
-    <p>Aprendé a comunicarte con seguridad, claridad y presencia.</p>
-    <a href="#contacto" class="btn">Quiero empezar</a>
+
+  <div class="hero-content">
+    <p class="mini">ORATORIA · CONFIANZA · VOZ</p>
+
+    <h1>
+      Encontrá tu <br>
+      <span class="script">voz</span> auténtica
+    </h1>
+
+    <p class="desc">
+      Acompaño a personas a expresarse con seguridad,
+      claridad y presencia.
+    </p>
+
+    <a href="#contacto" class="btn">Empezar</a>
   </div>
+
+  <div class="hero-image">
+    <img src="img/oratoria.png" alt="">
+  </div>
+
 </section>
 
-<!-- QUIÉN SOY -->
-<section id="sobre" class="about">
-  <div class="about-content">
-    <div>
-      <h2>Quién soy</h2>
-      <p>
-        Durante años me costó hablar en público. Hoy acompaño a personas
-        a desarrollar su voz, confianza y presencia.
-      </p>
-    </div>
-    <img src="img/about.jpg" alt="Oratoria">
+<!-- SOBRE -->
+<section id="sobre" class="about section">
+  <div class="container-small">
+    <h2>Sobre mí</h2>
+    <p>
+      Durante años me costó hablar en público. Hoy acompaño a personas
+      a conectar con su voz, su seguridad y su presencia.
+    </p>
+    <img src="img/oratoria.png" alt="">
   </div>
 </section>
 
 <!-- ORATORIA -->
-<section id="oratoria" class="section">
+<section id="oratoria" class="oratoria section">
   <h2>¿Qué es la oratoria?</h2>
   <p>
-    Es la capacidad de comunicar con claridad, seguridad y propósito.
-    No se trata solo de hablar, sino de conectar y generar impacto.
+    Es la capacidad de comunicar con claridad y generar impacto.
   </p>
 
-  <div class="grid">
-    <div class="card">✔ Seguridad al hablar</div>
-    <div class="card">✔ Orden y claridad</div>
-    <div class="card">✔ Presencia escénica</div>
+  <div class="benefits">
+    <p>Seguridad al hablar</p>
+    <p>Orden y claridad</p>
+    <p>Presencia escénica</p>
   </div>
 </section>
 
 <!-- GALERÍA -->
-<section id="galeria" class="gallery">
-  <h2>La experiencia de comunicar</h2>
+<section class="gallery section">
+  <h2>La experiencia</h2>
 
   <div class="gallery-grid">
-    <img src="img/galeria1.jpg">
-    <img src="img/galeria2.jpg">
-    <img src="img/galeria3.jpg">
-    <img src="img/galeria4.jpg">
-    <img src="img/galeria5.jpg">
-    <img src="img/galeria6.jpg">
+    <img src="img/gallery1.png">
+    <img src="img/gallery2.png">
+    <img src="img/gallery3.png">
   </div>
 </section>
 
 <!-- CONTACTO -->
-<section id="contacto" class="form">
+<section id="contacto" class="contact section">
   <h2>Contacto</h2>
 
   <form>
@@ -96,33 +103,12 @@
   </form>
 </section>
 
-<footer>
-  © 2026 Oratoria Studio
-</footer>
-
 <script>
 const hamburger = document.getElementById("hamburger");
 const menu = document.getElementById("menu");
-const overlay = document.getElementById("overlay");
 
 hamburger.addEventListener("click", () => {
-  hamburger.classList.toggle("active");
   menu.classList.toggle("active");
-  overlay.classList.toggle("active");
-});
-
-document.querySelectorAll(".menu a").forEach(link => {
-  link.addEventListener("click", () => {
-    hamburger.classList.remove("active");
-    menu.classList.remove("active");
-    overlay.classList.remove("active");
-  });
-});
-
-overlay.addEventListener("click", () => {
-  hamburger.classList.remove("active");
-  menu.classList.remove("active");
-  overlay.classList.remove("active");
 });
 </script>
 
