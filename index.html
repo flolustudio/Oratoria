@@ -5,94 +5,106 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Oratoria Studio</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;400;500&family=Great+Vibes&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
 </head>
 
 <body>
 
 <!-- NAV -->
-<nav>
+<nav class="nav">
   <div class="logo">Oratoria Studio</div>
+
+  <div class="menu" id="menu">
+    <a href="#testimonios">Testimonios</a>
+    <a href="#sobre">Sobre mí</a>
+    <a href="#galeria">Experiencia</a>
+    <a href="#contacto">Contacto</a>
+  </div>
 
   <div class="hamburger" id="hamburger">
     <span></span>
     <span></span>
     <span></span>
   </div>
-
-  <div class="menu" id="menu">
-    <a href="#hero">Inicio</a>
-    <a href="#sobre">Sobre mí</a>
-    <a href="#oratoria">Oratoria</a>
-    <a href="#contacto">Contacto</a>
-  </div>
 </nav>
 
 <!-- HERO -->
-<section id="hero" class="hero">
-
+<section class="hero">
   <div class="hero-content">
-    <p class="mini">ORATORIA · CONFIANZA · VOZ</p>
+    <p class="tag">ORATORIA · CONFIANZA · VOZ</p>
 
     <h1>
       Encontrá tu <br>
-      <span class="script">voz</span> auténtica
+      <span>voz</span> auténtica
     </h1>
 
-    <p class="desc">
-      Acompaño a personas a expresarse con seguridad,
-      claridad y presencia.
+    <p>
+      Aprendé a comunicarte con seguridad, claridad y presencia.
     </p>
 
     <a href="#contacto" class="btn">Empezar</a>
   </div>
+</section>
 
-  <div class="hero-image">
-    <img src="img/oratoria.png" alt="">
+<!-- TESTIMONIOS -->
+<section id="testimonios" class="section testimonios">
+  <h2>Testimonios</h2>
+
+  <div class="testimonios-list">
+
+    <div class="testimonio">
+      <p>
+        “Antes me costaba hablar en público. Hoy puedo expresarme con claridad y confianza.”
+      </p>
+      <span>— Belén R.</span>
+    </div>
+
+    <div class="testimonio">
+      <p>
+        “Ordené mis ideas y aprendí a transmitirlas sin miedo.”
+      </p>
+      <span>— Martín G.</span>
+    </div>
+
+    <div class="testimonio">
+      <p>
+        “Gané seguridad y presencia en todos los aspectos de mi vida.”
+      </p>
+      <span>— Carla M.</span>
+    </div>
+
   </div>
-
 </section>
 
 <!-- SOBRE -->
-<section id="sobre" class="about section">
-  <div class="container-small">
-    <h2>Sobre mí</h2>
-    <p>
-      Durante años me costó hablar en público. Hoy acompaño a personas
-      a conectar con su voz, su seguridad y su presencia.
-    </p>
-    <img src="img/oratoria.png" alt="">
-  </div>
-</section>
+<section id="sobre" class="section sobre">
+  <div class="sobre-content">
+    <img src="./img/oratoria.png" alt="Sobre ella">
 
-<!-- ORATORIA -->
-<section id="oratoria" class="oratoria section">
-  <h2>¿Qué es la oratoria?</h2>
-  <p>
-    Es la capacidad de comunicar con claridad y generar impacto.
-  </p>
-
-  <div class="benefits">
-    <p>Seguridad al hablar</p>
-    <p>Orden y claridad</p>
-    <p>Presencia escénica</p>
+    <div>
+      <h2>Sobre mí</h2>
+      <p>
+        Acompaño a personas a desarrollar su voz, confianza y presencia.
+        Mi enfoque combina herramientas prácticas con conexión emocional.
+      </p>
+    </div>
   </div>
 </section>
 
 <!-- GALERÍA -->
-<section class="gallery section">
+<section id="galeria" class="section galeria">
   <h2>La experiencia</h2>
 
-  <div class="gallery-grid">
-    <img src="img/gallery1.png">
-    <img src="img/gallery2.png">
-    <img src="img/gallery3.png">
+  <div class="galeria-grid">
+    <img src="./img/gallery1.png">
+    <img src="./img/gallery2.png">
+    <img src="./img/gallery3.png">
   </div>
 </section>
 
 <!-- CONTACTO -->
-<section id="contacto" class="contact section">
+<section id="contacto" class="section contacto">
   <h2>Contacto</h2>
 
   <form>

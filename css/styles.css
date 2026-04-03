@@ -1,7 +1,12 @@
 :root {
-  --primary: 169,106,121;
-  --bg: #fdf8f6;
-  --text: #3a2e2e;
+  --primary: #8e2a4f; /* MAGENTA OSCURO */
+  --primary-soft: #b94b74;
+
+  --bg-main: #fdf8f6;
+  --bg-soft: #f6efec;
+
+  --text-main: #2a1f1f;
+  --text-soft: #6f5f5f;
 }
 
 /* RESET */
@@ -13,172 +18,33 @@
 
 body {
   font-family: 'Inter', sans-serif;
-  background: var(--bg);
-  color: var(--text);
+  background: var(--bg-main);
+  color: var(--text-main);
 }
 
 /* NAV */
-nav {
-  position: absolute;
+.nav {
+  position: fixed;
   width: 100%;
-  padding: 25px 10%;
+  padding: 20px 10%;
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  z-index: 10;
   color: white;
-}
-
-.menu {
-  display: flex;
 }
 
 .menu a {
-  margin-left: 25px;
+  margin-left: 20px;
   text-decoration: none;
   color: white;
-  opacity: 0.8;
-}
-
-.menu a:hover {
-  opacity: 1;
-}
-
-/* HERO */
-.hero {
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 10%;
-
-  background:
-    linear-gradient(120deg,
-      rgba(169,106,121,0.7),
-      rgba(120,180,170,0.6)
-    ),
-    url('../img/hero.jpg');
-
-  background-size: cover;
-  background-position: center;
-
-  color: white;
-}
-
-.hero-content {
-  max-width: 500px;
-}
-
-.mini {
-  letter-spacing: 2px;
-  font-size: 0.8rem;
-  margin-bottom: 20px;
-}
-
-.hero h1 {
-  font-family: 'Playfair Display', serif;
-  font-size: 3.8rem;
-}
-
-.script {
-  font-style: italic;
-  font-weight: 400;
-}
-
-.desc {
-  margin: 25px 0;
-}
-
-.btn {
-  display: inline-block;
-  padding: 14px 28px;
-  border-radius: 50px;
-  background: rgba(255,255,255,0.2);
-  border: 1px solid white;
-  color: white;
-  text-decoration: none;
-}
-
-/* IMAGEN HERO */
-.hero-image img {
-  width: 350px;
-  height: 350px;
-  border-radius: 50%;
-  object-fit: cover;
-}
-
-/* SECCIONES */
-.section {
-  padding: 140px 10%;
-  text-align: center;
-}
-
-.container-small {
-  max-width: 700px;
-  margin: auto;
-}
-
-/* SOBRE */
-.about {
-  background: linear-gradient(
-    120deg,
-    rgba(169,106,121,0.1),
-    rgba(120,180,170,0.1)
-  );
-}
-
-.about img {
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
-  margin-top: 40px;
-}
-
-/* ORATORIA */
-.benefits p {
-  margin: 10px 0;
-}
-
-/* GALERÍA */
-.gallery {
-  background: linear-gradient(
-    120deg,
-    rgba(120,180,170,0.1),
-    rgba(169,106,121,0.1)
-  );
-}
-
-.gallery-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 30px;
-  margin-top: 50px;
-}
-
-.gallery img {
-  width: 100%;
-  height: 300px;
-  border-radius: 20px;
-  object-fit: cover;
-}
-
-/* CONTACTO */
-form {
-  max-width: 500px;
-  margin: 40px auto 0;
-}
-
-input, textarea {
-  width: 100%;
-  padding: 14px;
-  margin-top: 10px;
-  border-radius: 30px;
-  border: none;
-  background: rgba(0,0,0,0.05);
 }
 
 /* HAMBURGUESA */
 .hamburger {
   display: none;
   flex-direction: column;
+  cursor: pointer;
 }
 
 .hamburger span {
@@ -188,51 +54,217 @@ input, textarea {
   margin: 4px 0;
 }
 
+/* HERO */
+.hero {
+  min-height: 85vh;
+  display: flex;
+  align-items: center;
+  padding: 120px 10%;
+  position: relative;
+  color: white;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(
+      120deg,
+      rgba(169,106,121,0.7),
+      rgba(120,160,200,0.6),
+      rgba(230,190,160,0.5)
+    ),
+    url("../img/hero.jpg");
+  background-size: cover;
+  background-position: center;
+  z-index: 0;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 600px;
+}
+
+.tag {
+  letter-spacing: 2px;
+  font-size: 0.8rem;
+}
+
+.hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 3.5rem;
+}
+
+.hero span {
+  font-family: 'Great Vibes', cursive;
+  font-size: 4rem;
+}
+
+.hero p {
+  margin: 20px 0;
+}
+
+/* BOTÓN */
+.btn {
+  padding: 12px 28px;
+  border-radius: 50px;
+  background: var(--primary);
+  color: white;
+  text-decoration: none;
+  border: none;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: var(--primary-soft);
+}
+
+/* SECCIONES */
+.section {
+  padding: 90px 10%;
+}
+
+/* TESTIMONIOS (FLUIDOS) */
+.testimonios {
+  text-align: center;
+}
+
+.testimonios-list {
+  margin-top: 40px;
+}
+
+.testimonio {
+  max-width: 600px;
+  margin: 0 auto 40px;
+}
+
+.testimonio p {
+  font-style: italic;
+  font-size: 1.1rem;
+}
+
+.testimonio span {
+  display: block;
+  margin-top: 10px;
+  color: var(--primary);
+}
+
+/* SOBRE */
+.sobre-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+  align-items: center;
+}
+
+.sobre img {
+  width: 100%;
+  border-radius: 20px;
+}
+
+/* GALERÍA */
+.galeria {
+  text-align: center;
+}
+
+.galeria-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  margin-top: 30px;
+}
+
+.galeria img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 15px;
+}
+
+/* CONTACTO */
+.contacto {
+  text-align: center;
+  background: var(--bg-soft);
+}
+
+form {
+  max-width: 500px;
+  margin: auto;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 14px;
+  margin-top: 10px;
+  border-radius: 12px;
+  border: 1px solid #e5d6d6;
+}
+
 /* MOBILE */
 @media (max-width: 768px) {
-
-  .hamburger {
-    display: flex;
-  }
 
   .menu {
     position: absolute;
     top: 70px;
-    right: 20px;
-    background: rgba(255,255,255,0.9);
-    padding: 20px;
-    border-radius: 12px;
-    flex-direction: column;
+    right: 0;
+    width: 100%;
+    background: rgba(0,0,0,0.9);
     display: none;
-  }
-
-  .menu a {
-    color: var(--text);
-    margin: 10px 0;
+    flex-direction: column;
+    text-align: center;
+    padding: 20px 0;
   }
 
   .menu.active {
     display: flex;
   }
 
-  .hero {
-    flex-direction: column;
-    text-align: center;
-    padding: 100px 20px;
+  .menu a {
+    margin: 15px 0;
   }
 
-  .hero-image img {
-    width: 220px;
-    height: 220px;
-    margin-bottom: 30px;
+  .hamburger {
+    display: flex;
+  }
+
+  .section {
+    padding: 60px 20px;
+  }
+
+  .hero {
+    text-align: center;
+    min-height: 70vh;
   }
 
   .hero h1 {
-    font-size: 2.4rem;
+    font-size: 2.2rem;
   }
 
-  .gallery-grid {
+  .hero span {
+    font-size: 2.5rem;
+  }
+
+  .sobre-content {
     grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .galeria-grid {
+    grid-template-columns: 1fr;
+  }
+
+}
+@media (max-width: 768px) {
+
+  .menu {
+    background: #ffffff;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  }
+
+  .menu a {
+    color: var(--text-main);
   }
 
 }
